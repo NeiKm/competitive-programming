@@ -182,3 +182,29 @@ nav ol {
     color: var(--text-gray);
     padding-bottom: 32px;
 }
+
+.welcome-button {
+    display: flex;
+    gap: 16px;
+}
+
+.welcome-button button {
+    padding: 16px 32px;
+
+}
+
+.welcome-button .green-button {
+    background: var(--primary);
+    color: white;
+}
+
+.welcome-button .white-button {
+    background: white;
+    color: var(--primary);
+    border: 2px solid var(--primary)
+}
+
+.welcome-image img{
+    padding-top: 40px;
+    max-width: 100%;
+}
