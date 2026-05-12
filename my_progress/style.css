@@ -30,6 +30,13 @@ button {
     padding: 10px 16px;
     border: none;
     border-radius: var(--radius-md);
+
+}
+
+button:hover {
+    background: var(--primary-light);
+    color: var(--primary);
+    transition: var(--transition);
 }
 
 .top-header {
@@ -55,17 +62,22 @@ header {
     padding: 0px 24px;
 }
 
-.main-header {
-    display: flex;
-    padding: 16px 0;
-}
+/* .main-header {
+
+} */
 
 .header-content {
     display: flex;
+    padding: 16px 0;
+    gap: 32px;
+    align-items: center;
 }
 
 .logo {
+    gap: 12px;
     display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 24px;
     font-weight: 700;
 }
@@ -74,14 +86,23 @@ header {
     color: white;
     width: 40px;
     height: 40px;
-    border-radius: 10px;
-    justify-content: center;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    border-radius: 10px;
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+}
+
+.logo-icon p{
+    margin: 0;
 }
 
 .logo-text {
     color: var(--primary);
+}
+
+.main-serch {
+    position: relative;
 }
 
 .main-serch input{
@@ -90,7 +111,74 @@ header {
     border: 2px solid var(--border);
 }
 
-.buttons {
-    display: flex;
+.main-serch button {
+    position: absolute;
+    top: 5%;
+    right: 2%;
+    background: var(--primary);
+    color: white;
 }
 
+.main-serch button:hover {
+    background: var(--primary-dark);
+}
+
+.buttons {
+    right: 0;
+    position: fixed;
+    display: flex;
+    padding: 10px 16px;
+    gap: 12px;
+}
+
+nav {
+    padding: 0px 24px;
+}
+
+nav ul{
+    display: flex;
+    gap: 40px;
+}
+
+nav ol {
+    padding: 16px 0px;
+    color: var(--text-gray);
+}
+
+.welcome-section {
+    padding: 80px 24px;
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+}
+
+
+.hero-texts {
+    display: flex;
+    gap: 12px;
+}
+
+.hero-text {
+    padding: 8px 16px;
+    background: white;
+    border-radius: var(--radius-md);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-gray);
+}
+
+.welcome-text {
+    padding-bottom: 24px;
+}
+
+.welcome-section h1{
+    font-size: 42px;
+}
+
+.welcome-text span{
+    color: var(--primary);
+}
+
+.welcome-text-bottom {
+    font-size: 18px;
+    color: var(--text-gray);
+    padding-bottom: 32px;
+}
