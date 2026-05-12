@@ -1,0 +1,1691 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ECOFIT - 친환경 스마트 텀블러 공식 스토어</title>
+  <meta name="description" content="지속가능한 라이프스타일을 위한 프리미엄 친환경 텀블러. UV 자동 살균, BPA Free, 24시간 보온보냉" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ===== CSS Variables ===== */
+    :root {
+      --primary: #2d7a3e;
+      --primary-dark: #1b5e20;
+      --primary-light: #e8f5e9;
+      --secondary: #60a5fa;
+      --accent: #fbbf24;
+      --text-dark: #1a1a1a;
+      --text-gray: #666666;
+      --text-light: #999999;
+      --bg-white: #ffffff;
+      --bg-gray: #f8f9fa;
+      --bg-dark: #0f172a;
+      --border: #e5e7eb;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+      --shadow-lg: 0 10px 40px rgba(0,0,0,0.12);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ===== Reset & Base ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background: var(--bg-white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== Header ===== */
+    .top-banner {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .top-banner a {
+      color: white;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    header {
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    .header-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 32px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .search-bar {
+      flex: 1;
+      max-width: 500px;
+      position: relative;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 14px 48px 14px 20px;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      font-size: 15px;
+      transition: var(--transition);
+      background: var(--bg-gray);
+    }
+
+    .search-bar input:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(45, 122, 62, 0.1);
+    }
+
+    .search-bar button {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--primary);
+      color: white;
+      padding: 10px 16px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .search-bar button:hover {
+      background: var(--primary-dark);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .icon-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      font-weight: 600;
+      transition: var(--transition);
+      background: var(--bg-gray);
+      color: var(--text-dark);
+      position: relative;
+    }
+
+    .icon-btn:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      background: #ef4444;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      min-width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      padding: 0 6px;
+      box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+    }
+
+    /* ===== Navigation ===== */
+    .nav-menu {
+      border-top: 1px solid var(--border);
+      padding: 0;
+    }
+
+    .nav-list {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-list a {
+      display: block;
+      padding: 16px 0;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--text-gray);
+      transition: var(--transition);
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-list a:hover,
+    .nav-list a.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    /* ===== Hero Section ===== */
+    .hero {
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: radial-gradient(circle at 70% 30%, rgba(45, 122, 62, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-text h1 {
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      color: var(--text-dark);
+      letter-spacing: -1px;
+    }
+
+    .hero-text h1 .highlight {
+      color: var(--primary);
+      position: relative;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      color: var(--text-gray);
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+
+    .hero-badges {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: white;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-gray);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .badge svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 32px;
+      border-radius: var(--radius-md);
+      font-size: 16px;
+      font-weight: 600;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 4px 14px rgba(45, 122, 62, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(45, 122, 62, 0.4);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-secondary:hover {
+      background: var(--primary-light);
+    }
+
+    .hero-image {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+      filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.15));
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* ===== Features Section ===== */
+    .features {
+      padding: 100px 0;
+      background: white;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 60px;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    .section-description {
+      font-size: 18px;
+      color: var(--text-gray);
+      line-height: 1.7;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .feature-card {
+      background: var(--bg-gray);
+      padding: 40px 32px;
+      border-radius: var(--radius-lg);
+      transition: var(--transition);
+      border: 2px solid transparent;
+    }
+
+    .feature-card:hover {
+      background: white;
+      border-color: var(--primary);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+
+    .feature-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      color: white;
+      font-size: 28px;
+    }
+
+    .feature-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .feature-card p {
+      color: var(--text-gray);
+      line-height: 1.7;
+    }
+
+    /* ===== Products Section ===== */
+    .products {
+      padding: 100px 0;
+      background: var(--bg-gray);
+    }
+
+    .products-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .filters {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .filter-chip {
+      padding: 10px 20px;
+      background: white;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 14px;
+      transition: var(--transition);
+      color: var(--text-gray);
+    }
+
+    .filter-chip:hover,
+    .filter-chip.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .sort-select {
+      padding: 10px 16px;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      font-weight: 600;
+      background: white;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .sort-select:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+    }
+
+    .product-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-8px);
+    }
+
+    .product-image {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 70%;
+      height: 70%;
+      object-fit: contain;
+      transition: var(--transition);
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.1);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 6px 12px;
+      background: var(--primary);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .product-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-dark);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .product-title:hover {
+      color: var(--primary);
+    }
+
+    .product-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    .product-rating {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .product-price {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .price {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-dark);
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .qty-control {
+      display: flex;
+      align-items: center;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+
+    .qty-control button {
+      padding: 8px 12px;
+      background: var(--bg-gray);
+      font-weight: 700;
+      transition: var(--transition);
+    }
+
+    .qty-control button:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .qty-control span {
+      padding: 8px 16px;
+      font-weight: 600;
+      min-width: 50px;
+      text-align: center;
+    }
+
+    .add-to-cart {
+      flex: 1;
+      background: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 14px;
+      transition: var(--transition);
+    }
+
+    .add-to-cart:hover {
+      background: var(--primary-dark);
+      transform: scale(1.02);
+    }
+
+    /* ===== CTA Section ===== */
+    .cta-section {
+      padding: 100px 0;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .cta-section p {
+      font-size: 18px;
+      margin-bottom: 32px;
+      opacity: 0.9;
+    }
+
+    .cta-section .btn {
+      background: white;
+      color: var(--primary);
+    }
+
+    .cta-section .btn:hover {
+      background: var(--bg-gray);
+      transform: translateY(-2px);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: var(--bg-dark);
+      color: white;
+      padding: 60px 0 30px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand {
+      max-width: 320px;
+    }
+
+    .footer-logo {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: white;
+    }
+
+    .footer-description {
+      opacity: 0.8;
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    .footer-section h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      opacity: 0.8;
+      transition: var(--transition);
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--primary-light);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* ===== Cart Drawer ===== */
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      max-width: 450px;
+      height: 100vh;
+      background: white;
+      box-shadow: -4px 0 30px rgba(0, 0, 0, 0.2);
+      transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1001;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-drawer.open {
+      right: 0;
+    }
+
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      z-index: 1000;
+    }
+
+    .cart-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .cart-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cart-header h3 {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .close-cart {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--bg-gray);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .close-cart:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px;
+    }
+
+    .cart-item {
+      display: flex;
+      gap: 16px;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cart-item-image {
+      width: 80px;
+      height: 80px;
+      background: var(--bg-gray);
+      border-radius: var(--radius-md);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .cart-item-image img {
+      width: 70%;
+      height: 70%;
+      object-fit: contain;
+    }
+
+    .cart-item-info {
+      flex: 1;
+    }
+
+    .cart-item-title {
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .cart-item-meta {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 12px;
+    }
+
+    .cart-item-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cart-item-price {
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .remove-item {
+      color: #ef4444;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+    }
+
+    .remove-item:hover {
+      background: #fee2e2;
+    }
+
+    .cart-footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      background: var(--bg-gray);
+    }
+
+    .cart-summary {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .summary-row.total {
+      padding-top: 12px;
+      border-top: 2px solid var(--border);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .checkout-btn {
+      width: 100%;
+      background: var(--primary);
+      color: white;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      font-size: 16px;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+
+    .checkout-btn:hover {
+      background: var(--primary-dark);
+    }
+
+    .empty-cart {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-light);
+    }
+
+    .empty-cart-icon {
+      font-size: 64px;
+      margin-bottom: 16px;
+      opacity: 0.3;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 1024px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero-text h1 {
+        font-size: 42px;
+      }
+
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-main {
+        flex-wrap: wrap;
+      }
+
+      .search-bar {
+        order: 3;
+        max-width: 100%;
+      }
+
+      .nav-list {
+        gap: 20px;
+        overflow-x: auto;
+      }
+
+      .hero-text h1 {
+        font-size: 36px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text h1 {
+        font-size: 28px;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Banner -->
+  <div class="top-banner">
+    🎉 신규 회원 가입 시 10% 할인 쿠폰 즉시 지급! <a href="#signup">지금 가입하기 →</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-main">
+        <a href="main.html" class="logo">
+          <div class="logo-icon">E</div>
+          ECOFIT
+        </a>
+
+        <div class="search-bar">
+          <input type="search" id="searchInput" placeholder="상품명, 색상, 용량으로 검색">
+          <button type="button">검색</button>
+        </div>
+
+        <div class="header-actions">
+          <button class="icon-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+            로그인
+          </button>
+          <button class="icon-btn" id="cartButton">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="9" cy="21" r="1"/>
+              <circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+            장바구니
+            <span class="cart-badge" id="cartBadge">0</span>
+          </button>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <div class="container">
+          <ul class="nav-list">
+            <li><a href="#" class="active">홈</a></li>
+            <li><a href="#products">전체 상품</a></li>
+            <li><a href="#new">신제품</a></li>
+            <li><a href="#best">베스트</a></li>
+            <li><a href="#review">리뷰</a></li>
+            <li><a href="#support">고객지원</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badges">
+            <span class="badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              환경부 인증
+            </span>
+            <span class="badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+              무료배송
+            </span>
+            <span class="badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              24시간 보온
+            </span>
+          </div>
+          
+          <h1>
+            매일 마시는 물,<br>
+            <span class="highlight">99.9% UV</span>로<br>
+            깨끗하게
+          </h1>
+          
+          <p>
+            자동 UV 살균 기능으로 세균 걱정 없이 사용하세요.<br>
+            BPA Free 친환경 소재로 몸에도 지구에도 안전합니다.
+          </p>
+          
+          <div class="hero-buttons">
+            <a href="#products" class="btn btn-primary">
+              지금 쇼핑하기
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+            <a href="#features" class="btn btn-secondary">
+              특징 알아보기
+            </a>
+          </div>
+        </div>
+        
+        <div class="hero-image">
+          <img src="메인_연출.png" alt="에코핏 스마트 텀블러">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-subtitle">Why Choose ECOFIT</div>
+        <h2 class="section-title">ECOFIT만의 특별함</h2>
+        <p class="section-description">
+          일상에서 가장 자주 사용하는 물건이기에, 디테일까지 책임집니다.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🧬</div>
+          <h3>99.9% UV 자동 살균</h3>
+          <p>버튼 한 번으로 텀블러 내부를 자동 살균하여 세균 걱정 없이 깨끗하게 사용할 수 있습니다.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">♻️</div>
+          <h3>친환경 인증 소재</h3>
+          <p>BPA Free 스테인리스 스틸과 재활용 가능한 소재로 제작되어 환경을 생각합니다.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔥</div>
+          <h3>24시간 보온보냉</h3>
+          <p>이중 진공 단열 기술로 뜨거운 음료는 24시간 따뜻하게, 차가운 음료는 시원하게 유지합니다.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">💧</div>
+          <h3>누수 방지 설계</h3>
+          <p>실리콘 패킹과 정밀한 설계로 가방 속에서도 안심하고 휴대할 수 있습니다.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>무선 충전 지원</h3>
+          <p>USB-C 무선 충전으로 편리하게 사용하며, 한 번 충전으로 약 2주간 사용 가능합니다.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🎁</div>
+          <h3>1년 품질 보증</h3>
+          <p>제조 과정부터 A/S까지 철저한 품질 관리로 안심하고 사용하실 수 있습니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-subtitle">Our Collection</div>
+        <h2 class="section-title">전체 상품</h2>
+      </div>
+
+      <div class="products-toolbar">
+        <div class="filters">
+          <button class="filter-chip active" data-filter="all">전체</button>
+          <button class="filter-chip" data-filter="black">블랙</button>
+          <button class="filter-chip" data-filter="white">화이트</button>
+          <button class="filter-chip" data-filter="green">그린</button>
+          <button class="filter-chip" data-filter="mint">민트</button>
+        </div>
+
+        <select class="sort-select" id="sortSelect">
+          <option value="popular">인기순</option>
+          <option value="price-low">가격 낮은순</option>
+          <option value="price-high">가격 높은순</option>
+          <option value="new">신상품순</option>
+        </select>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+        <!-- 상품 카드들이 여기에 동적으로 추가됩니다 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>지금 바로 시작하세요</h2>
+      <p>매일 사용하는 일회용 컵을 줄이고, 지구를 지키는 깨끗한 습관을 만들어보세요.</p>
+      <a href="#products" class="btn">
+        지금 쇼핑하기
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">ECOFIT</div>
+          <p class="footer-description">
+            지속 가능한 라이프스타일을 위한 프리미엄 친환경 텀블러 브랜드입니다.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="#0f172a"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#0f172a" stroke-width="2"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#0f172a"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>쇼핑 정보</h4>
+          <ul class="footer-links">
+            <li><a href="#">전체 상품</a></li>
+            <li><a href="#">신제품</a></li>
+            <li><a href="#">베스트</a></li>
+            <li><a href="#">할인 상품</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>고객 지원</h4>
+          <ul class="footer-links">
+            <li><a href="#">배송 조회</a></li>
+            <li><a href="#">교환/반품</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">1:1 문의</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>회사 정보</h4>
+          <ul class="footer-links">
+            <li><a href="#">회사 소개</a></li>
+            <li><a href="#">채용 정보</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          <p>㈜엔비오 | 대표: 김대환 | 사업자등록번호: 123-45-67890</p>
+          <p>충청북도 청주시 흥덕구 에코로 123 | 통신판매업신고: 2024-충북청주-00123</p>
+          <p style="margin-top: 8px;">© 2024 ECOFIT. All rights reserved.</p>
+        </div>
+        <div>
+          <p>고객센터: 1588-0000</p>
+          <p>평일 09:00-18:00</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>장바구니</h3>
+      <button class="close-cart" id="closeCart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="cart-items" id="cartItemsContainer">
+      <div class="empty-cart">
+        <div class="empty-cart-icon">🛒</div>
+        <p>장바구니가 비어있습니다</p>
+      </div>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-summary">
+        <div class="summary-row">
+          <span>상품 금액</span>
+          <span id="cartSubtotal">₩0</span>
+        </div>
+        <div class="summary-row">
+          <span>배송비</span>
+          <span id="cartShipping">₩0</span>
+        </div>
+        <div class="summary-row total">
+          <span>총 결제 금액</span>
+          <span id="cartTotal">₩0</span>
+        </div>
+      </div>
+      <button class="checkout-btn" id="checkoutBtn">결제하기</button>
+    </div>
+  </div>
+
+  <script>
+    // ===== 상품 데이터 =====
+    const PRODUCTS = [
+      {
+        id: 'eco-001',
+        name: '에코핏 클래식 500ml',
+        price: 35000,
+        capacity: 500,
+        color: 'black',
+        badge: 'BEST',
+        rating: 4.9,
+        reviews: 1247,
+        image: '메인_연출.png'
+      },
+      {
+        id: 'eco-002',
+        name: '에코핏 스마트 350ml',
+        price: 32000,
+        capacity: 350,
+        color: 'white',
+        badge: 'NEW',
+        rating: 4.8,
+        reviews: 892,
+        image: '메인_연출.png'
+      },
+      {
+        id: 'eco-003',
+        name: '에코핏 프로 700ml',
+        price: 42000,
+        capacity: 700,
+        color: 'green',
+        badge: null,
+        rating: 4.7,
+        reviews: 654,
+        image: '메인_연출.png'
+      },
+      {
+        id: 'eco-004',
+        name: '에코핏 미니 300ml',
+        price: 28000,
+        capacity: 300,
+        color: 'mint',
+        badge: null,
+        rating: 4.6,
+        reviews: 423,
+        image: '메인_연출.png'
+      },
+      {
+        id: 'eco-005',
+        name: '에코핏 라지 1000ml',
+        price: 48000,
+        capacity: 1000,
+        color: 'black',
+        badge: null,
+        rating: 4.8,
+        reviews: 756,
+        image: '메인_연출.png'
+      },
+      {
+        id: 'eco-006',
+        name: '에코핏 키즈 250ml',
+        price: 25000,
+        capacity: 250,
+        color: 'mint',
+        badge: null,
+        rating: 4.5,
+        reviews: 312,
+        image: '메인_연출.png'
+      },
+      {
+        id: 'eco-007',
+        name: '에코핏 트래블 600ml',
+        price: 39000,
+        capacity: 600,
+        color: 'white',
+        badge: null,
+        rating: 4.7,
+        reviews: 589,
+        image: '메인_연출.png'
+      },
+      {
+        id: 'eco-008',
+        name: '에코핏 오피스 450ml',
+        price: 36000,
+        capacity: 450,
+        color: 'green',
+        badge: 'HOT',
+        rating: 4.9,
+        reviews: 1034,
+        image: '메인_연출.png'
+      }
+    ];
+
+    // ===== 전역 상태 =====
+    let cart = [];
+    let currentFilter = 'all';
+    let currentSort = 'popular';
+
+    // ===== 유틸리티 함수 =====
+    const formatPrice = (price) => {
+      return new Intl.NumberFormat('ko-KR').format(price);
+    };
+
+    const getColorLabel = (color) => {
+      const labels = {
+        black: '블랙',
+        white: '화이트',
+        green: '그린',
+        mint: '민트'
+      };
+      return labels[color] || color;
+    };
+
+    // ===== 상품 렌더링 =====
+    function renderProducts() {
+      const grid = document.getElementById('productsGrid');
+      let products = [...PRODUCTS];
+
+      // 필터링
+      if (currentFilter !== 'all') {
+        products = products.filter(p => p.color === currentFilter);
+      }
+
+      // 정렬
+      if (currentSort === 'price-low') {
+        products.sort((a, b) => a.price - b.price);
+      } else if (currentSort === 'price-high') {
+        products.sort((a, b) => b.price - a.price);
+      } else if (currentSort === 'new') {
+        products.reverse();
+      }
+
+      grid.innerHTML = products.map(product => `
+        <div class="product-card">
+          <div class="product-image" onclick="goToProduct('${product.id}')">
+            ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ''}
+            <img src="${product.image}" alt="${product.name}">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title" onclick="goToProduct('${product.id}')">${product.name}</h3>
+            <div class="product-meta">
+              <span class="product-rating">★ ${product.rating}</span>
+              <span>리뷰 ${product.reviews}</span>
+              <span>${product.capacity}ml</span>
+              <span>${getColorLabel(product.color)}</span>
+            </div>
+            <div class="product-price">
+              <span class="price">₩${formatPrice(product.price)}</span>
+            </div>
+            <div class="product-actions">
+              <div class="qty-control">
+                <button onclick="changeQty('${product.id}', -1)">-</button>
+                <span id="qty-${product.id}">1</span>
+                <button onclick="changeQty('${product.id}', 1)">+</button>
+              </div>
+              <button class="add-to-cart" onclick="addToCart('${product.id}')">담기</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // ===== 수량 조절 =====
+    let quantities = {};
+    PRODUCTS.forEach(p => quantities[p.id] = 1);
+
+    function changeQty(productId, delta) {
+      quantities[productId] = Math.max(1, quantities[productId] + delta);
+      document.getElementById(`qty-${productId}`).textContent = quantities[productId];
+    }
+
+    // ===== 장바구니 기능 =====
+    function addToCart(productId) {
+      const product = PRODUCTS.find(p => p.id === productId);
+      const qty = quantities[productId];
+      
+      const existingItem = cart.find(item => item.id === productId);
+      if (existingItem) {
+        existingItem.qty += qty;
+      } else {
+        cart.push({ ...product, qty });
+      }
+      
+      quantities[productId] = 1;
+      document.getElementById(`qty-${productId}`).textContent = 1;
+      
+      updateCart();
+      showCartAnimation();
+    }
+
+    function removeFromCart(productId) {
+      cart = cart.filter(item => item.id !== productId);
+      updateCart();
+    }
+
+    function updateCartQty(productId, delta) {
+      const item = cart.find(i => i.id === productId);
+      if (item) {
+        item.qty = Math.max(1, item.qty + delta);
+        updateCart();
+      }
+    }
+
+    function updateCart() {
+      const badge = document.getElementById('cartBadge');
+      const container = document.getElementById('cartItemsContainer');
+      const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+      
+      badge.textContent = totalItems;
+
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="empty-cart">
+            <div class="empty-cart-icon">🛒</div>
+            <p>장바구니가 비어있습니다</p>
+          </div>
+        `;
+        document.getElementById('cartSubtotal').textContent = '₩0';
+        document.getElementById('cartShipping').textContent = '₩0';
+        document.getElementById('cartTotal').textContent = '₩0';
+        return;
+      }
+
+      container.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <div class="cart-item-image">
+            <img src="${item.image}" alt="${item.name}">
+          </div>
+          <div class="cart-item-info">
+            <div class="cart-item-title">${item.name}</div>
+            <div class="cart-item-meta">${item.capacity}ml · ${getColorLabel(item.color)}</div>
+            <div class="cart-item-controls">
+              <div class="qty-control">
+                <button onclick="updateCartQty('${item.id}', -1)">-</button>
+                <span>${item.qty}</span>
+                <button onclick="updateCartQty('${item.id}', 1)">+</button>
+              </div>
+              <div class="cart-item-price">₩${formatPrice(item.price * item.qty)}</div>
+            </div>
+            <button class="remove-item" onclick="removeFromCart('${item.id}')">삭제</button>
+          </div>
+        </div>
+      `).join('');
+
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      const shipping = subtotal >= 50000 ? 0 : 3000;
+      const total = subtotal + shipping;
+
+      document.getElementById('cartSubtotal').textContent = `₩${formatPrice(subtotal)}`;
+      document.getElementById('cartShipping').textContent = shipping === 0 ? '무료' : `₩${formatPrice(shipping)}`;
+      document.getElementById('cartTotal').textContent = `₩${formatPrice(total)}`;
+    }
+
+    function showCartAnimation() {
+      const badge = document.getElementById('cartBadge');
+      badge.style.animation = 'none';
+      setTimeout(() => {
+        badge.style.animation = 'bounce 0.5s';
+      }, 10);
+    }
+
+    // ===== 페이지 이동 =====
+    function goToProduct(productId) {
+      window.location.href = `product.html?id=${productId}`;
+    }
+
+    // ===== 이벤트 리스너 =====
+    document.getElementById('cartButton').addEventListener('click', () => {
+      document.getElementById('cartDrawer').classList.add('open');
+      document.getElementById('cartOverlay').classList.add('open');
+    });
+
+    document.getElementById('closeCart').addEventListener('click', () => {
+      document.getElementById('cartDrawer').classList.remove('open');
+      document.getElementById('cartOverlay').classList.remove('open');
+    });
+
+    document.getElementById('cartOverlay').addEventListener('click', () => {
+      document.getElementById('cartDrawer').classList.remove('open');
+      document.getElementById('cartOverlay').classList.remove('open');
+    });
+
+    document.getElementById('checkoutBtn').addEventListener('click', () => {
+      if (cart.length === 0) {
+        alert('장바구니가 비어있습니다.');
+        return;
+      }
+      alert('결제 페이지로 이동합니다 (데모)');
+    });
+
+    // 필터 버튼
+    document.querySelectorAll('.filter-chip').forEach(chip => {
+      chip.addEventListener('click', (e) => {
+        document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+        e.target.classList.add('active');
+        currentFilter = e.target.dataset.filter;
+        renderProducts();
+      });
+    });
+
+    // 정렬 선택
+    document.getElementById('sortSelect').addEventListener('change', (e) => {
+      currentSort = e.target.value;
+      renderProducts();
+    });
+
+    // CSS 애니메이션 추가
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes bounce {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.3); }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // ===== 초기화 =====
+    renderProducts();
+    updateCart();
+  </script>
+</body>
+</html>
