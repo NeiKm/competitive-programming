@@ -60,17 +60,15 @@ button:hover {
 
 header {
     padding: 0px 24px;
+    /* position: fixed; */
 }
-
-/* .main-header {
-
-} */
 
 .header-content {
     display: flex;
     padding: 16px 0;
     gap: 32px;
     align-items: center;
+    border-bottom: 1px solid rgba(158, 158, 158, 0.274);
 }
 
 .logo {
@@ -125,7 +123,8 @@ header {
 
 .buttons {
     right: 0;
-    position: fixed;
+    position: absolute;
+    /* position: fixed; */
     display: flex;
     padding: 10px 16px;
     gap: 12px;
@@ -207,4 +206,78 @@ nav ol {
 .welcome-image img{
     padding-top: 40px;
     max-width: 100%;
+}
+
+.about-product {
+    padding-top: 100px;
+    background: white;
+}
+
+.title- {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-top {
+    margin-bottom: 12px;
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.title-main h2{
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.title-bottom p{
+    color: var(--text-gray);
+    font-size: 18px;
+}
+
+.about-cards-container {
+    margin: 0px 24px;
+}
+
+.about-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.card {
+    background: var(--bg-gray);
+    padding: 40px 32px;
+    border-radius: var(--radius-lg);
+    border: 2px solid transparent;
+}
+
+.card:hover {
+    background: rgb(255, 255, 255);
+    border: 2px solid var(--primary);
+    transition: var(--transition);
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.11);
+}
+
+.card-logo {
+    display: flex;
+    font-size: 28px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    width: 64px;
+    height: 64px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.card-info {
+    color: var(--text-gray);
 }
