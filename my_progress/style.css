@@ -103,10 +103,14 @@ header {
     position: relative;
 }
 
-.main-serch input{
-    padding: 14px 48px 14px 20px;
+.main-serch input {
+    padding: 14px 48px 14px 120px;
     border-radius: var(--radius-md);
     border: 2px solid var(--border);
+}
+
+.main-serch input:focus {
+    border: 2px solid var(--primary);
 }
 
 .main-serch button {
@@ -211,6 +215,7 @@ nav ol {
 .about-product {
     padding-top: 100px;
     background: white;
+    padding-bottom: 100px;
 }
 
 .title- {
@@ -280,4 +285,50 @@ nav ol {
 
 .card-info {
     color: var(--text-gray);
+}
+
+.shop {
+    background: var(--bg-gray);
+    padding: 100px 0px;
+}
+
+.shop-title {
+    padding-bottom: 60px;
+}
+
+.shop-top-title {
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.shop-main-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shop-main-title h3 {
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.shop-nav {
+    color: var(--text-gray);
+}
+
+.shop-nav li {
+    list-style: none;
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 10px 20px;
+}
+
+.shop-nav ul {
+    gap: 12px;
 }
