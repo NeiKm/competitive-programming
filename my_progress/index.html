@@ -10,6 +10,32 @@
     <section class="top-header">
         <p>🎉 신규 회원 가입 시 10% 할인 쿠폰 즉시 지급! <a href="">지금 가입하기 →</a></p>
     </section>
+    <section class="inventory" id="inventory">
+        <div class="inventory-title">
+            <p class="inventory-title-txt">장바구니</p>
+            <button class="inventory-exit" onclick="on_of_visibly()">X</button>
+        </div>
+        <div class="inventory-content">
+            장바구니가 비어있습니다
+        </div>
+        <div class="inventory-footer">
+            <div class="inventory-footer-content">
+                <div class="inventory-price">
+                    <p>상품 금액</p>
+                    <p>₩0</p>
+                </div>
+                <div class="inventory-delivery-price">
+                    <p>배송비</p>
+                    <p>₩0</p>
+                </div>
+                <div class="inventory-all-price">
+                    <p>총 결제 금액</p>
+                    <p>₩0</p>
+                </div>
+                <button class="pay">결제하기</button>
+            </div>
+        </div>
+    </section>
     <header>
         <div class="main-header">
             <div class="header-content">
@@ -27,7 +53,10 @@
                 </div>
                 <div class="buttons">
                     <button>로그인</button>
-                    <button id="paguni">장바구니</button>
+                    <button onclick="on_of_visibly()">장바구니</button>
+                    <div class="product-count" id="product-count">
+                        0
+                    </div>
                 </div>
             </div>
             <nav>
@@ -52,7 +81,6 @@
                 <div class="hero-text">
                     <p>무료배송</p>
                 </div>
-
                 <div class="hero-text">
                     <p>24시간 보온</p>
                 </div>
@@ -64,7 +92,7 @@
             <p class="welcome-text-bottom">자동 UV 살균 기능으로 세균 걱정 없이 사용하세요. <br>
             BPA Free 친환경 소재로 몸에도 지구에도 안전합니다.</p>
         <div class="welcome-button">
-            <button class="green-button">지금 쇼핑하기</button>
+            <button class="green-button"><a href="#shop_">지금 쇼핑하기</a></button>
             <button class="white-button">특징 알아보기</button>
         </div>
         <div class="welcome-image">
@@ -154,7 +182,7 @@
             </div>
         </div>
     </section>
-    <section class="shop">
+    <section class="shop" id="shop_">
         <div class="shop-title">
             <div class="shop-top-title">
                 <p>OUR COLECTION</p>
@@ -174,143 +202,8 @@
                 </ul>
             </nav>
         </div>
-        <div class="shop-content">
-            <!-- элементы карточек с таварами напишу потом -->
-            <div class="shop-card">
-                <div class="product-logo">
-                    <img src="images/메인_연출.png" alt="">
-                </div>
-                <div class="product-about">
-                    <div class="product-title">
-                        <p>에코핏 클래식 500ml</p>
-                    </div>
-                    <div class="product-text">
-                        <p class="product-text-star">★4.9</p>
-                        <p class="product-text-text">리뷰 1247 500ml 블랙</p>
-                    </div>
-                    <div class="product-price">
-                        <p>₩35,000</p>
-                    </div>
-                    <div class="product-buttons">
-                        <div class="product-selecter">
-                            <button class="product-selecter-minus">-</button>
-                            <p class="product-selecter-count">1</p>
-                            <button class="product-selecter-plus">+</button>
-                        </div>
-                        <div class="product-button">
-                            <button onclick="add_product()">담기</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="shop-card">
-                <div class="product-logo">
-                    <img src="images/메인_연출.png" alt="">
-                </div>
-                <div class="product-about">
-                    <div class="product-title">
-                        <p>에코핏 클래식 500ml</p>
-                    </div>
-                    <div class="product-text">
-                        <p>4.9</p>
-                        <p>리뷰 1247 500ml 블랙</p>
-                    </div>
-                    <div class="product-price">
-                        <p>₩35,000</p>
-                    </div>
-                    <div class="product-buttons">
-                        <div class="product-selecter">
-                            <button class="product-selecter-minus">-</button>
-                            <p class="product-selecter-count">1</p>
-                            <button class="product-selecter-plus">+</button>
-                        </div>
-                        <div class="product-button">
-                            <button class="product-select">담기</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="shop-card">
-                <div class="product-logo">
-                    <img src="images/메인_연출.png" alt="">
-                </div>
-                <div class="product-about">
-                    <div class="product-title">
-                        <p>에코핏 클래식 500ml</p>
-                    </div>
-                    <div class="product-text">
-                        <p>4.9</p>
-                        <p>리뷰 1247 500ml 블랙</p>
-                    </div>
-                    <div class="product-price">
-                        <p>₩35,000</p>
-                    </div>
-                    <div class="product-buttons">
-                        <div class="product-selecter">
-                            <button class="product-selecter-minus">-</button>
-                            <p class="product-selecter-count">1</p>
-                            <button class="product-selecter-plus">+</button>
-                        </div>
-                        <div class="product-button">
-                            <button class="product-select">담기</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="shop-card">
-                <div class="product-logo">
-                    <img src="images/메인_연출.png" alt="">
-                </div>
-                <div class="product-about">
-                    <div class="product-title">
-                        <p>에코핏 클래식 500ml</p>
-                    </div>
-                    <div class="product-text">
-                        <p>4.9</p>
-                        <p>리뷰 1247 500ml 블랙</p>
-                    </div>
-                    <div class="product-price">
-                        <p>₩35,000</p>
-                    </div>
-                    <div class="product-buttons">
-                        <div class="product-selecter">
-                            <button class="product-selecter-minus">-</button>
-                            <p class="product-selecter-count">1</p>
-                            <button class="product-selecter-plus">+</button>
-                        </div>
-                        <div class="product-button">
-                            <button class="product-select">담기</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="shop-card">
-                <div class="product-logo">
-                    <img src="images/메인_연출.png" alt="">
-                </div>
-                <div class="product-about">
-                    <div class="product-title">
-                        <p>에코핏 클래식 500ml</p>
-                    </div>
-                    <div class="product-text">
-                        <p>4.9</p>
-                        <p>리뷰 1247 500ml 블랙</p>
-                    </div>
-                    <div class="product-price">
-                        <p>₩35,000</p>
-                    </div>
-                    <div class="product-buttons">
-                        <div class="product-selecter">
-                            <button class="product-selecter-minus">-</button>
-                            <p class="product-selecter-count">1</p>
-                            <button class="product-selecter-plus">+</button>
-                        </div>
-                        <div class="product-button">
-                            <button class="product-select">담기</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="shop-content" id="shop">
+            <!-- элементы карточек с таварами добавляются черещ js -->
         </div>
     </section>
     <script src="script.js"></script>

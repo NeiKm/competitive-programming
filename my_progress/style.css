@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -25,6 +26,10 @@
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.visible_of {
+    display: none;
+}
+
 button {
     display: flex;
     padding: 10px 16px;
@@ -39,6 +44,91 @@ button:hover {
     transition: var(--transition);
 }
 
+.inventory {
+    opacity: 1;
+    width: 450px;
+    position: fixed;
+    z-index: 2;
+    right: 0;
+    top: 0;
+    background: white;
+    height: 100%;
+}
+
+.inventory-title {
+    justify-content: space-between;
+    display: flex;
+    padding: 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.inventory-title-txt {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.inventory-exit {
+    display: flex;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--bg-gray);
+    justify-content: center;
+    align-items: center;
+    right: 0;
+}
+
+.inventory-content {
+    color: var(--text-gray);
+    background: white;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 550px;
+}
+
+.inventory-footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-top: 1px solid var(--border);
+    padding: 24px;
+    background: var(--bg-gray);
+}
+
+.inventory-price {
+    justify-content: space-between;
+    display: flex;
+}
+
+.inventory-delivery-price {
+    justify-content: space-between;
+    display: flex;
+}
+
+.inventory-all-price {
+    padding-top: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between; 
+}
+
+.pay {
+    background: var(--primary);
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+}
+
+.pay:hover {
+    background: var(--primary-dark);
+    color: white;
+    transition: var(--transition);
+}
+
 .top-header {
     display: flex;
     color: white;
@@ -50,6 +140,13 @@ button:hover {
     font-weight: 400;
 }
 
+header {
+    position: sticky;
+    z-index: 4;
+    top: 0;
+    background: rgba(255, 255, 255, 0.87);
+}
+
 .top-header p {
     font-size: 14px;
 }
@@ -58,9 +155,8 @@ button:hover {
     color: white;
 }
 
-header {
+.main-header {
     padding: 0px 24px;
-    /* position: fixed; */
 }
 
 .header-content {
@@ -134,6 +230,20 @@ header {
     gap: 12px;
 }
 
+.product-count {
+    position: absolute;
+    right: 10px;
+    font-weight: 700;
+    color: white;
+    background: red;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 6px;
+    border-radius: 10px;
+}
+
 nav {
     padding: 0px 24px;
 }
@@ -170,6 +280,11 @@ nav ol {
 
 .welcome-text {
     padding-bottom: 24px;
+}
+
+.welcome-button a {
+    text-decoration: none;
+    color: white;
 }
 
 .welcome-section h1{
@@ -210,6 +325,9 @@ nav ol {
 .welcome-image img{
     padding-top: 40px;
     max-width: 100%;
+    animation-duration: 6s;
+    animation-name: livitate;
+    animation-iteration-count: infinite;
 }
 
 .about-product {
@@ -421,4 +539,23 @@ nav ol {
     color: white;
     align-items: center;
     justify-content: center;
+}
+
+.product-price {
+    color: var(--text-dark);
+    font-weight: 800;
+    font-size: 22px;
+    margin-bottom: 16px;
+}
+
+@keyframes livitate {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
