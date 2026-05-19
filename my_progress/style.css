@@ -45,8 +45,7 @@ button:hover {
 }
 
 .inventory {
-    position: absolute;
-    margin-left: 222200px;
+    position: fixed;
     width: 450px;
     z-index: 5;
     right: 0;

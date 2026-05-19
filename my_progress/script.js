@@ -56,7 +56,7 @@ function choise_image() {
     return image_[rn];
 }
 
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 30; i++) {
     all_product.push(
         [
             [
