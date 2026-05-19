@@ -29,25 +29,79 @@ var product_count = document.getElementById("product-count");
 var shop = document.getElementById("shop");
 var inventory = document.getElementById("inventory");
 var shadow_shaider = document.getElementById("shadow_shaider");
+
+var select_items = [];
+var basket = [];
+
 inventory.classList.add("visible_of");
 shadow_shaider.classList.add("visible_of");
 
+var all_product = [];
+
+function choise_color() {
+    rn = Math.round(Math.random() * 5);
+    colors = [
+        "하늘색", "빨간색", "초럭색", "횐색", "검은색", "노란색"
+    ];
+    return colors[rn];
+}
+
+function choise_image() {
+    rn = Math.round(Math.random() * 3);
+    console.log(rn);
+    image_ = [
+        "images/메인_연출.png", "images/product2.jpg", "images/product3.jpg", "images/product4.jpg"
+    ];
+    console.log(image_[rn]);
+    return image_[rn];
+}
+
 for (var i = 0; i < 10; i++) {
+    all_product.push(
+        [
+            [
+                "id",
+                i + ""
+            ],
+            [
+                "size", 
+                Math.round(Math.random() * 4) + "50"
+            ],
+            [
+                "star",
+                (Math.round(Math.random() * 5) + ".") + Math.round(Math.random() * 9)
+            ],
+            [
+                "price",
+                Math.round(Math.random() * 100 + 1) + ",000"
+            ],
+            [
+                "color",
+                choise_color()
+            ],
+            [
+                "image",
+                choise_image()
+            ]
+        ]
+
+    );
+
     const product_card = `
     <div class="shop-card">
         <div class="product-logo">
-            <img src="images/메인_연출.png" alt="">
+            <img src=${all_product[i][5][1]} alt="">
         </div>
         <div class="product-about">
             <div class="product-title">
-                <p>에코핏 클래식 ${Math.round(Math.random() * 4)}${Math.round(Math.random() * 5)}0ml</p>
+                <p>에코핏 클래식 ${all_product[i][1][1]}ml</p>
             </div>
             <div class="product-text">
-                <p class="product-text-star">★${Math.round(Math.random() * 5)}.${Math.round(Math.random() * 9)}</p>
-                <p class="product-text-text">리뷰 1247 500ml 블랙</p>
+                <p class="product-text-star">★${all_product[i][2][1]}</p>
+                <p class="product-text-text">리뷰 1247 ${all_product[i][1][1]} ${all_product[i][4][1]}</p>
             </div>
             <div class="product-price">
-                <p>₩${Math.round(Math.random() * 100 + 1)},000</p>
+                <p>₩${all_product[i][3][1]}</p>
             </div>
             <div class="product-buttons">
                 <div class="product-selecter">
@@ -56,7 +110,7 @@ for (var i = 0; i < 10; i++) {
                     <button class="product-selecter-plus" id="product-selecter-plus" onclick="add_product_plus()">+</button>
                 </div>
                 <div class="product-button">
-                    <button onclick="add_product()">담기</button>
+                    <button onclick="add_product(this)" id=${all_product[i][0][1]}>담기</button>
                 </div>
             </div>
         </div>
@@ -67,7 +121,9 @@ for (var i = 0; i < 10; i++) {
 
 var product_count_num = document.getElementById("product-selecter-count");
 
-function add_product() {
+function add_product(element) {
+    basket.push(element.id)
+    console.log(basket);
     product_count.innerHTML = selected_product_pieces;
 }
 
@@ -81,6 +137,11 @@ function add_product_minus() {
         return 0;
     }
     selected_product_pieces -= 1;
+    select_items.push(
+        ["id", "ter"],
+        ["date", new Date()],
+        ["quantity", 0],
+    );
     product_count_num.innerHTML = selected_product_pieces;
 }
 
