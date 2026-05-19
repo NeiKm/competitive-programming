@@ -26,6 +26,11 @@
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+nav a {
+    text-decoration: none;
+    color: var(--text-gray);
+}
+
 .visible_of {
     display: none;
 }
@@ -77,13 +82,10 @@ button:hover {
     right: 0;
 }
 
-.inventory-content {
-    color: var(--text-gray);
-    background: white;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    height: 550px;
+.inventory-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
 }
 
 .inventory-footer-content {
@@ -546,6 +548,78 @@ nav ol {
     font-size: 22px;
     margin-bottom: 16px;
 }
+
+.inventory-content {
+    width: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    height: 650px;
+}
+
+.inventory-content- {
+    width: 100%;
+    padding: 20px;
+}
+
+.inventory-card {
+    position: relative;
+    padding-bottom: 20px;
+    display: flex;
+    border-bottom: 1px solid var(--border);
+}
+
+.inventory-card-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: var(--bg-gray);
+    border-radius: var(--radius-md);
+}
+
+.inventory-card-logo img{
+    width: 70%;
+}
+
+.inventory-card-content {
+    padding: 10px 30px;
+}
+
+.inventory-card-title-title {
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.inventory-card-title-txt {
+    color: var(--text-gray);
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.inventory-card-price {
+    position: absolute;
+    bottom: 60px;
+    right: 50px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.inventory-card-delete-button button {
+    width: 200px;
+    height: 20px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: var(--primary);
+}
+
+.inventory-card-delete-button button:hover {
+    background: rgb(185, 18, 18);
+}
+
 /* -----------------------------------SHAIDERS----------------------------------- */
 .shadow_shaider {
     transition: var(--transition);

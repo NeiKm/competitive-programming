@@ -29,8 +29,8 @@ var product_count = document.getElementById("product-count");
 var shop = document.getElementById("shop");
 var inventory = document.getElementById("inventory");
 var shadow_shaider = document.getElementById("shadow_shaider");
+var inventory_content = document.getElementById("inventory-content");
 
-var select_items = [];
 var basket = [];
 
 inventory.classList.add("visible_of");
@@ -47,10 +47,10 @@ function choise_color() {
 }
 
 function choise_image() {
-    rn = Math.round(Math.random() * 3);
+    rn = Math.round(Math.random() * 5);
     console.log(rn);
     image_ = [
-        "images/메인_연출.png", "images/product2.jpg", "images/product3.jpg", "images/product4.jpg"
+        "images/메인_연출.png", "images/product2.jpg", "images/product3.jpg", "images/product4.jpg", "images/product5.jpg", "images/product6.jpg"
     ];
     console.log(image_[rn]);
     return image_[rn];
@@ -69,7 +69,7 @@ for (var i = 0; i < 30; i++) {
             ],
             [
                 "star",
-                (Math.round(Math.random() * 5) + ".") + Math.round(Math.random() * 9)
+                (Math.round(Math.random() * 4) + ".") + Math.round(Math.random() * 9)
             ],
             [
                 "price",
@@ -122,7 +122,7 @@ for (var i = 0; i < 30; i++) {
 var product_count_num = document.getElementById("product-selecter-count");
 
 function add_product(element) {
-    basket.push(element.id)
+    basket.push(element.id);
     console.log(basket);
     product_count.innerHTML = selected_product_pieces;
 }
@@ -137,15 +137,46 @@ function add_product_minus() {
         return 0;
     }
     selected_product_pieces -= 1;
-    select_items.push(
-        ["id", "ter"],
-        ["date", new Date()],
-        ["quantity", 0],
-    );
     product_count_num.innerHTML = selected_product_pieces;
 }
 
 function on_of_visibly() {
     inventory.classList.toggle("visible_of");
     shadow_shaider.classList.toggle("visible_of");
+    const newElement = document.createElement('div');
+    inventory_content.replaceChildren(newElement);
+    for (var i = 0; i < basket.length; i++) {
+        const content = `
+                <div class="inventory-content-">
+                    <div class="inventory-card">
+                        <div class="inventory-card-logo">
+                            <img src="images/메인_연출.png" alt="">
+                        </div>
+                        <div class="inventory-card-content">
+                            <div class="inventory-card-title">
+                                <p class="inventory-card-title-title">에코핏 스마트 350ml</p>
+                                <p class="inventory-card-title-txt">350ml · 화이트</p>
+                            </div>
+                            <div class="product-selecter">
+                                <button class="product-selecter-minus" id="product-selecter-minus" onclick="add_product_minus()">-</button>
+                                <p class="product-selecter-count" id="product-selecter-count">1</p>
+                                <button class="product-selecter-plus" id="product-selecter-plus" onclick="add_product_plus()">+</button>
+                            </div>
+                            <div class="inventory-card-delete-button">
+                                <button>삭제</button>
+                            </div>
+                        </div>
+                        <div class="inventory-card-price">
+                            <p>₩35,000</p>
+                        </div>
+                    </div>
+                </div>
+        `
+
+        inventory_content.insertAdjacentHTML("beforeend", content);
+    }
+}
+
+function write_adress() {
+    prompt("주소 써주세요")
 }

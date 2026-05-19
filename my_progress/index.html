@@ -17,8 +17,8 @@
             <p class="inventory-title-txt">장바구니</p>
             <button class="inventory-exit" onclick="on_of_visibly()">X</button>
         </div>
-        <div class="inventory-content">
-            장바구니가 비어있습니다
+        <div class="inventory-content" id="inventory-content">
+
         </div>
         <div class="inventory-footer">
             <div class="inventory-footer-content">
@@ -34,7 +34,7 @@
                     <p>총 결제 금액</p>
                     <p>₩0</p>
                 </div>
-                <button class="pay">결제하기</button>
+                <button class="pay" onclick="write_adress()">결제하기</button>
             </div>
         </div>
     </section>
@@ -63,8 +63,8 @@
             </div>
             <nav>
                 <ul>
-                    <ol>홈</ol>
-                    <ol>전체 상품</ol>
+                    <ol><a href="#home">홈</a></ol>
+                    <ol><a href="#shop_">전체 상품</a></ol>
                     <ol>신제품</ol>
                     <ol>베스트</ol>
                     <ol>리뷰</ol>
@@ -73,7 +73,7 @@
             </nav>
         </div>
     </header>
-    <section class="welcome-section">
+    <section class="welcome-section" id="home">
         <div class="hero">
             <div class="hero-texts">
                 <div class="hero-text">
@@ -205,7 +205,7 @@
             </nav>
         </div>
         <div class="shop-content" id="shop">
-            <!-- элементы карточек с таварами добавляются черещ js -->
+            <!-- элементы карточек с таварами добавляются через js -->
         </div>
     </section>
     <script src="script.js"></script>
