@@ -45,10 +45,10 @@ button:hover {
 }
 
 .inventory {
-    opacity: 1;
+    position: absolute;
+    margin-left: 222200px;
     width: 450px;
-    position: fixed;
-    z-index: 2;
+    z-index: 5;
     right: 0;
     top: 0;
     background: white;
@@ -546,6 +546,15 @@ nav ol {
     font-weight: 800;
     font-size: 22px;
     margin-bottom: 16px;
+}
+/* -----------------------------------SHAIDERS----------------------------------- */
+.shadow_shaider {
+    transition: var(--transition);
+    z-index: 5;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
 }
 
 @keyframes livitate {

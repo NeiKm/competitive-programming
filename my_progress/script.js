@@ -28,7 +28,9 @@ var selected_product_pieces = 1;
 var product_count = document.getElementById("product-count");
 var shop = document.getElementById("shop");
 var inventory = document.getElementById("inventory");
+var shadow_shaider = document.getElementById("shadow_shaider");
 inventory.classList.add("visible_of");
+shadow_shaider.classList.add("visible_of");
 
 for (var i = 0; i < 10; i++) {
     const product_card = `
@@ -84,4 +86,5 @@ function add_product_minus() {
 
 function on_of_visibly() {
     inventory.classList.toggle("visible_of");
+    shadow_shaider.classList.toggle("visible_of");
 }
