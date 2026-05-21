@@ -26,11 +26,6 @@ var selected_items = {
     "items": [
         {
             "id": 0,
-            "size": 2,
-            "star": 5.0,
-            "price": 3000,
-            "color": "gray",
-            "image": "path"
         }
     ]
 };
@@ -55,12 +50,11 @@ var standart_products = {
     ],
 };
 
-
 // -----------------
 // HTML_OBJECTS_INIT <
 // -----------------
-var html_selected_items = document.getElementById("product-count");
-var html_number_items_basket = document.getElementById("product-selecter-count");
+var html_number_items_basket = document.getElementById("product-count");
+var html_selected_items = [];
 var html_shop_content = document.getElementById("shop");
 var html_basket = document.getElementById("inventory");
 var html_shadow_shaider = document.getElementById("shadow_shaider");
@@ -115,13 +109,19 @@ function toggle_visibly() {
 }
 
 function remove_product() {
-    if (selected_items["items"].length > 0) {
-        selected_items["items"].pop();
-    }
+    // if (selected_items["items"].length > 0) {
+    //     selected_items["items"].pop();
+    // }
+    selected_items["items"].pop();
+    update("selected_items");
 }
 
 function add_product(element) {
-    selected_items["items"].push(element.id);
+    selected_items["items"].push(
+        {"id":Number(element.id.slice(-1))}
+    );
+    console.log("----------------", selected_items["items"])
+    update("selected_items");
 }
 
 function save_products() {
@@ -130,6 +130,7 @@ function save_products() {
             selected_items["items"]
         );
     }
+    update("save_products");
 }
 
 function show_basket_items() {
@@ -196,12 +197,12 @@ function generate_shop_cards() {
                     </div>
                     <div class="product-buttons">
                         <div class="product-selecter">
-                            <button class="product-selecter-minus" id="product-selecter-minus" onclick="add_product_minus()">-</button>
-                            <p class="product-selecter-count" id="product-selecter-count">1</p>
-                            <button class="product-selecter-plus" id="product-selecter-plus" onclick="add_product_plus()">+</button>
+                            <button class="product-selecter-minus" id="product-selecter-minus${i}" onclick="remove_product()">-</button>
+                            <p class="product-selecter-count" id="product-selecter-count${i}">1</p>
+                            <button class="product-selecter-plus" id="product-selecter-plus${i}" onclick="add_product(this)">+</button>
                         </div>
                         <div class="product-button">
-                            <button onclick="add_product(this)" id=${all_shop_products["items"][i]["id"]}>담기</button>
+                            <button onclick="save_products(this)" id=${all_shop_products["items"][i]["id"]}>담기</button>
                         </div>
                     </div>
                 </div>
@@ -212,13 +213,41 @@ function generate_shop_cards() {
 }
 
 function show_shop_content() {
+    html_selected_items = [];
         for (var i = 0; i < all_shop_products["items"].length; i++) {
-            shop.insertAdjacentHTML("beforeend", all_shop_products["product_card_html"][i])
+            shop.insertAdjacentHTML("beforeend", all_shop_products["product_card_html"][i]);
+            const counterElement = document.getElementById(`product-selecter-count${i}`);
+            html_selected_items.push(counterElement);
         }
+        console.log(html_selected_items);
 }
 
 function write_adress() {
     prompt("주소 써주세요");
+}
+
+// var selected_items = {
+//     "items": [
+//         {
+//             "id": 0,
+//         }
+//     ]
+// };
+
+function update(type) {
+    if (type == "selected_items") {
+        for (var i = 0; i < selected_items["items"].length; i++) {
+            if (selected_items["items"][i]["id"] == html_selected_items[i]) {
+                html_selected_items[i].innerHTML = selected_items["items"].length;
+            }
+            console.log(selected_items["items"][i]["id"])
+            console.log(html_selected_items[i])
+        }
+    }
+
+    if (type == "save_products") {
+        html_number_items_basket.innerHTML = Number(html_number_items_basket.textContent) + selected_items["items"].length;
+    }
 }
 
 generate_shop_cards();
