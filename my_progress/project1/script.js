@@ -213,13 +213,16 @@ function generate_shop_cards() {
 }
 
 function show_shop_content() {
-    html_selected_items = [];
-        for (var i = 0; i < all_shop_products["items"].length; i++) {
-            shop.insertAdjacentHTML("beforeend", all_shop_products["product_card_html"][i]);
-            const counterElement = document.getElementById(`product-selecter-count${i}`);
+    html_selected_items = []; 
+
+    for (let i = 0; i < all_shop_products["items"].length; i++) {
+        shop.insertAdjacentHTML("beforeend", all_shop_products["product_card_html"][i]);
+        const counterElement = document.getElementById(`product-selecter-count${i}`);
+        if (counterElement) {
             html_selected_items.push(counterElement);
         }
-        console.log(html_selected_items);
+    }
+    console.log(html_selected_items);
 }
 
 function write_adress() {
