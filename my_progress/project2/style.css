@@ -16,6 +16,10 @@ body {
     color: white;
 }
 
+img {
+    border-radius: 50%;
+}
+
 /* header {
     display: flex;
     justify-content: space-between;
@@ -35,6 +39,11 @@ body {
 .header-logo h1{
     font-weight: 300;
     font-size: 22px;
+}
+
+.header-logo span {
+    font-weight: 50;
+    font-size: 15px;
 }
 
 .header-nav {
@@ -70,4 +79,12 @@ body {
 .story-content img {
     width: 75px;
     border-radius: 50%;
+}
+
+.content-header {
+    justify-content: space-between;
+}
+
+.aftor-img  img{
+    width: 32px;
 }
