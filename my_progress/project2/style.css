@@ -20,10 +20,12 @@ img {
     border-radius: 50%;
 }
 
-/* header {
-    display: flex;
-    justify-content: space-between;
-} */
+header {
+    top: 0px;
+    position: fixed;
+    width: 100%;
+    background: var(--bg-dark);
+}
 
 .header-content {
     padding-bottom: 9px;
@@ -55,6 +57,10 @@ img {
 
 .download-content {
     font-weight: 200;
+}
+
+.story {
+    margin-top: 60px;
 }
 
 .story-content {
@@ -97,6 +103,8 @@ img {
 }
 
 .aftor-name {
+    font-size: 13px;
+    margin-left: 20px;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -121,12 +129,42 @@ img {
     display: flex;
 }
 
-.aftor-img  img{
+.aftor-img  img {
     width: 32px;
 }
 
-.content-video {
-    background: green;
+/*.content-video {
+    background: rgba(7, 112, 116, 0);
+}*/
+
+.content-video video {
     width: 100%;
-    height: 480px;
+}
+
+.content-footer-action {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content-footer-action-left {
+    margin-left: 20px;
+    gap: 20px;
+    display: flex;
+}
+
+.content-footer-action-left span {
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+}
+
+.content-footer-action-right {
+    margin-right: 20px;
+}
+
+.content-footer-text {
+    font-size: 13px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
