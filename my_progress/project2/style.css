@@ -16,10 +16,10 @@ body {
     color: white;
 }
 
-header {
-    /* display: flex;
-    justify-content: space-between; */
-}
+/* header {
+    display: flex;
+    justify-content: space-between;
+} */
 
 .header-content {
     padding-bottom: 9px;
@@ -29,9 +29,45 @@ header {
 }
 
 .header-logo {
-    font-size: 12px;
+    margin-top: 5px;
 }
 
-/* .header-new {
+.header-logo h1{
+    font-weight: 300;
+    font-size: 22px;
+}
+
+.header-nav {
     display: flex;
-} */
+    gap: 20px;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.download-content {
+    font-weight: 200;
+}
+
+.story-content {
+    overflow-x: auto;
+    display: flex;
+    margin-left: 20px;
+    margin-top: 15px;
+    gap: 20px;
+}
+
+.story-content::-webkit-scrollbar {
+    display: none;
+}
+
+.my-story-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+}
+
+.story-content img {
+    width: 75px;
+    border-radius: 50%;
+}
