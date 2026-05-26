@@ -22,9 +22,15 @@ body {
     color: white;
 }
 
+.fixed-elements {
+    width: 100%;
+    position: fixed;
+    background: var(--bg-dark);
+    padding-bottom: 20px;
+}
+
 header {
     top: 0px;
-    position: fixed;
     width: 100%;
     background: var(--bg-dark);
 }
@@ -59,7 +65,7 @@ header {
 }
 
 .bottom-header {
-    margin-top: 55px;
+    margin-top: 15px;
     font-weight: 20;
     font-size: 15px;
     justify-content: space-between;
@@ -171,3 +177,34 @@ header {
 .aftor-img  img {
     width: 32px;
 }
+
+/* .message-content {
+    background: rebeccapurple;
+} */
+
+
+.message-frend {
+    padding: 20px;
+    padding-bottom: 0px;
+    display: flex;
+}
+
+.message-frend-title {
+    margin-left: 15px;
+}
+
+.message-frend-image img {
+    width: 48px;
+    border-radius: 50%;
+}
+
+.message-frend-content {
+    margin-left: 15px;
+    font-size: 14px;
+    color: gray;
+}
+
+.message-frend span {
+    font-weight: 300;
+}
+

@@ -166,11 +166,12 @@ header {
 }
 
 .content-footer-action-right {
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 .content-footer-text {
     font-size: 13px;
+    margin-top: 20px;
     padding-right: 20px;
     padding-left: 20px;
 }
@@ -199,3 +200,5 @@ footer {
     width: 25px;
     border-radius: 50%;
 }
+
+

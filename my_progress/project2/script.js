@@ -15,7 +15,8 @@ var all_videos = [
     "https://videos.pexels.com/video-files/31907337/13591391_2560_1440_30fps.mp4",
     "https://videos.pexels.com/video-files/14143532/14143532-uhd_2560_1440_25fps.mp4",
     "https://videos.pexels.com/video-files/7350447/7350447-uhd_1440_2560_25fps.mp4",
-    "https://videos.pexels.com/video-files/8798433/8798433-uhd_1440_2732_25fps.mp4"
+    "https://videos.pexels.com/video-files/8798433/8798433-uhd_1440_2732_25fps.mp4",
+    "https://www.news1.kr/_next/image?url=https%3A%2F%2Fi3n.news1.kr%2Fsystem%2Fphotos%2F2025%2F8%2F6%2F7431154%2Fhigh.jpg&w=1920&q=75"
 ]
 
 var all_profile_photo = [
@@ -46,12 +47,12 @@ function get_random_likes() {
 }
 
 function get_random_comments_num() {
-    rn = Math.round(Math.random() * 100000);
+    rn = Math.round(Math.random() * 1000);
     return rn
 }
 
 function get_random_repost_num() {
-    rn = Math.round(Math.random() * 1000);
+    rn = Math.round(Math.random() * 100);
     return rn
 }
 
