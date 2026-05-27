@@ -14,3 +14,32 @@
 body {
     background: var(--bg-dark);
 }
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+img {
+    border-radius: 50%;
+    width: 40px;
+}
+
+.header-content {
+    background: rgb(31, 31, 31);
+    gap: 20px;
+    justify-content: space-evenly;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.info_ {
+    padding-bottom: 20px;
+    margin-right: 100px;
+}
+
+.nickname {
+    font-size: 10px;
+    color: rgb(150, 150, 150);
+}
