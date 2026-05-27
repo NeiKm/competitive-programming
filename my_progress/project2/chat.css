@@ -1,0 +1,16 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+:root {
+    --bg-dark: #141414;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-big: 20px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    background: var(--bg-dark);
+}
