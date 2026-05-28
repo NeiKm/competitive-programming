@@ -24,6 +24,7 @@ body {
 
 .fixed-elements {
     width: 100%;
+    top: 0px;
     position: fixed;
     background: var(--bg-dark);
     padding-bottom: 20px;
@@ -178,9 +179,9 @@ header {
     width: 32px;
 }
 
-/* .message-content {
-    background: rebeccapurple;
-} */
+/*.message-content {
+    margin-top: 200px;
+}*/
 
 
 .message-frend {
