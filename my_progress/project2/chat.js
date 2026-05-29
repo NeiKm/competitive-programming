@@ -4,6 +4,7 @@ var chat = document.getElementById("chat");
 var user_name = document.getElementById("name");
 var user_nick = document.getElementById("nickname");
 var user = localStorage.getItem("user");
+let chatHistory = [];
 
 var positiveWords = [
     "최고",
@@ -78,7 +79,7 @@ for (var i = 0; i < Math.round(Math.random() * 2) + 1; i++) {
 }
 window.scrollTo(0, document.documentElement.scrollHeight);
 
-function responce_msg() {
+async function responce_msg(txt) {
     chat.insertAdjacentHTML(
         "beforeend",
         `
@@ -88,16 +89,17 @@ function responce_msg() {
                     <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="">
                 </div>
                 <div class="message-content">
-                    <p class="message-writing"></p>
+                    <p class="message-writing">입력중...</p>
                 </div>
             </div>
         </div>
         `
     );
-    let res_msg = generate_text();
+    let res_msg = await ai(txt);
     let index = 0;
     let msg = chat.querySelectorAll(".message-writing");
     msg = msg[msg.length - 1];
+    msg.textContent = "";
     function writing_message() {
         if (index != res_msg.length) {
             msg.textContent += res_msg[index];
@@ -105,7 +107,7 @@ function responce_msg() {
             window.scrollTo(0, document.documentElement.scrollHeight);
             setTimeout(() => {
                 writing_message();
-            }, 100);
+            }, Math.round(Math.random() * 200) + 200);
         }
     }
     writing_message();
@@ -136,7 +138,7 @@ function send_msg(content) {
     }
     chat_history.push(content);
     setTimeout(() => {
-      responce_msg();
+      responce_msg(content);
     }, Math.round(Math.random() * 3000) + 1);
 }
 
@@ -310,4 +312,50 @@ function generate_text() {
     }
     let randomIndex = Math.floor(Math.random() * responses.length);
     return responses[randomIndex];
+}
+
+async function ai(text) {
+    try {
+        chatHistory.push({ role: "user", content: text });
+        if (chatHistory.length > 5) {
+                    chatHistory.shift();
+        }
+        let formattedHistory = chatHistory.map(msg => {
+            let name = msg.role === "user" ? "User" : "You";
+            return `${name}: ${msg.content}`;
+        }).join("\n");
+        let urlObj = new URL("https://text.pollinations.ai/");
+        urlObj.pathname += encodeURIComponent(text);
+        urlObj.searchParams.set("model", "openai");
+        urlObj.searchParams.set("system", `
+            You are a normal person named ${user.name}
+            Chat history
+            ${formattedHistory}
+            Reply only in the language of the latest message and use casual speech only, keep replies short and natural, slang jokes swearing flirting allowed, if the other person likes it you can confess love
+            Fun and natural conversation is the priority, do not constantly try to help or greet
+            Never act like an AI bot or program, even if asked reply like a human
+            Do not write too perfectly or formally, small typos allowed
+            No dots or special symbols, commas only
+            Replies under 180 characters
+        `)
+
+        console.log("Отправка запроса по правильному адресу:", urlObj.toString());
+        let response = await fetch(urlObj.toString());
+        if (!response.ok) {
+            throw new Error("Ошибка сервера: " + response.status);
+        }
+        let clean_text = await response.text();
+        if (clean_text) {
+            console.log("Ответ получен:", clean_text);
+            return clean_text;
+        }
+        return "ИИ прислал пустой ответ.";
+    } catch (error) {
+        chatHistory.push({ role: "user", content: text });
+        if (chatHistory.length > 5) {
+                    chatHistory.shift();
+        }
+        console.error("Критическая ошибка функции ai():", error);
+        return generate_text();
+    }
 }

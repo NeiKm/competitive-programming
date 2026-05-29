@@ -95,6 +95,6 @@ serch_user.addEventListener("keydown", function(event) {
         let el = document.getElementById(event.target.value + "")
         window.scrollTo(0, el.offsetTop - 500);
         el.classList.add("target");
-        setTimeout(() => {el.classList.toggle("target")}, 2000);
+        setTimeout(() => {el.classList.toggle("target")}, 500);
     }
 });
