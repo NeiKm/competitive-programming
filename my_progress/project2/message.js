@@ -1,4 +1,13 @@
 var chats = document.getElementById("message-frends");
+var serch_user = document.getElementById("serch-user");
+var msg = [
+    "안녕",
+    "뭐해?",
+    "내일 학교 올거야?",
+    "간식 먹을래?",
+    "내일 학교 안가도 돼",
+    "내일 쉬는날이야",
+];
 var members = [
     ["정시은", "..."], ["홍은정", "..."], ["이동연", "..."],
     ["함라희", "..."], ["고무성", "..."], ["박건희", "..."],
@@ -47,7 +56,13 @@ var members = [
     ["알리나", "..."], ["탠탠", "..."], ["정윰민", "..."],
 ];
 
+function get_random_msg_() {
+    rn = Math.round(Math.random() * (msg.length -1));
+    return msg[rn];
+}
+
 for (let i = 0; i < members.length - 1; i++) {
+    members[i][1] = get_random_msg_();
     let content = `
         <div class="message-frend" id="${members[i][0]}">
             <div class="message-frend-image">
@@ -56,7 +71,7 @@ for (let i = 0; i < members.length - 1; i++) {
             <div class="message-frend-info">
                 <div class="message-frend-title">${members[i][0]}</div>
                 <div class="message-frend-content">
-                    ${members[i][1]} <span> · ${i * Math.round(Math.random() * i)}시간</span>
+                    ${members[i][1]} <span> · ${i * Math.round(Math.random()) + 1}시간</span>
                 </div>
             </div>
         </div>
@@ -74,3 +89,12 @@ document.querySelectorAll(".message-frend").forEach(function(friend) {
         location.href = "chat.html";
     })
 })
+
+serch_user.addEventListener("keydown", function(event) {
+    if (event.key == "Enter") {
+        let el = document.getElementById(event.target.value + "")
+        window.scrollTo(0, el.offsetTop - 500);
+        el.classList.add("target");
+        setTimeout(() => {el.classList.toggle("target")}, 2000);
+    }
+});

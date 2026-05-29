@@ -1,10 +1,15 @@
 :root {
     --bg-dark: #141414;
     --bg-light-dark: #292929;
+    --bg-target: rgb(102, 102, 102)414;
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-big: 20px;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 * {
@@ -103,6 +108,12 @@ header {
     border-radius: var(--radius-big);
     height: 40px;
     width: 100%;
+    color: white;
+}
+
+.serch input::placeholder {
+    color: gray;
+    transform: translateX(45%);
 }
 
 .story {
@@ -185,9 +196,11 @@ header {
 
 
 .message-frend {
+    background: var(--bg-dark);
     padding: 20px;
     padding-bottom: 0px;
     display: flex;
+    transition: 2s;
 }
 
 .message-frend-title {
@@ -209,3 +222,7 @@ header {
     font-weight: 300;
 }
 
+.target {
+    background: var(--bg-light-dark);
+    transition: 1s;
+}

@@ -1,5 +1,6 @@
 var html_contents = document.getElementById("reels");
 var content = ``
+var likes;
 var all_videos = [
     "https://videos.pexels.com/video-files/10145286/10145286-hd_1080_1920_30fps.mp4",
     "https://videos.pexels.com/video-files/8371241/8371241-uhd_1440_2732_25fps.mp4",
@@ -108,7 +109,7 @@ for (var i = 0; i < 20; i++) {
             <div class="content-footer">
                 <div class="content-footer-action">
                     <div class="content-footer-action-left">
-                        <div class="content-footer-like">
+                        <div class="content-footer-like" id="like">
                             ♡ <span>${get_random_likes()}</span>
                         </div>
                         <div class="content-footer-comment">
@@ -130,4 +131,9 @@ for (var i = 0; i < 20; i++) {
         </div>
     `
     html_contents.insertAdjacentHTML("beforebegin", content);
+    // likes = getElementById("like");
 }
+// likes.addEventListener("click", function() {
+//     likes.textContent += 1; 
+// });
+
