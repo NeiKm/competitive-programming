@@ -4,6 +4,7 @@ var chat = document.getElementById("chat");
 var user_name = document.getElementById("name");
 var user_nick = document.getElementById("nickname");
 var user = localStorage.getItem("user");
+var send_btn = document.getElementById("send-message-btn");
 let chatHistory = [];
 
 var positiveWords = [
@@ -141,6 +142,15 @@ function send_msg(content) {
       responce_msg(content);
     }, Math.round(Math.random() * 3000) + 1);
 }
+
+send_btn.addEventListener("click", function() {
+    let txt = message_txt.textContent;
+    message_txt.textContent = "";
+    if (txt.length > 0) {
+        send_msg(txt);
+        window.scrollTo(0, document.documentElement.scrollHeight);
+    }
+});
 
 message_txt.addEventListener("keydown", function(event) {
     if (event.key == "Enter") {
