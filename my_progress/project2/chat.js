@@ -144,8 +144,8 @@ function send_msg(content) {
 }
 
 send_btn.addEventListener("click", function() {
-    let txt = message_txt.textContent;
-    message_txt.textContent = "";
+    let txt = message_txt.value;
+    message_txt.value = "";
     if (txt.length > 0) {
         send_msg(txt);
         window.scrollTo(0, document.documentElement.scrollHeight);
