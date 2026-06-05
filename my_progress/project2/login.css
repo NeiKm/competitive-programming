@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-main: #ff0000;
+    --bg-main2: #1100ff;
+    --bg-login-box: #ff0000;
+    --bg-dark: #4400ff;
+}
+
+input {
+    border: 0px;
+}
+
+.login-section {
+    background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-main2) 100%);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 100vh;
+}
+
+.login-header {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 30px;
+    margin-bottom: 60px;
+    width: 100%;
+}
+
+.login-box {
+    border: 3px solid rgb(162, 0, 255);
+    color: white;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-login-box) 100%);
+    padding: 80px;
+    border-radius: 20px;
+}
+
+.write-email input {
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.write-password input {
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.send-btn {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.send-btn button{
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+}
