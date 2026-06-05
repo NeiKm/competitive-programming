@@ -9,6 +9,6 @@ send_btn.addEventListener("click", function() {
         console.log(password_input.value);
         name_input.value = "";
         password_input.value = "";
+        window.location.href = "home.html"
     }
-
 })

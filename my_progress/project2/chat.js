@@ -124,7 +124,7 @@ function send_msg(content) {
                     <p>${content}</p>
                 </div>
                 <div class="profil-image_in_chat">
-                    <img src="images/my_profile_picters.png" alt="">
+                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="">
                 </div>
             </div>
         </div>
