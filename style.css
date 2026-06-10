@@ -1,0 +1,203 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+:root {
+    --bg-dark: #141414;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-big: 20px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+body {
+    background: var(--bg-dark);
+    color: white;
+}
+
+img {
+    border-radius: 50%;
+}
+
+header {
+    top: 0px;
+    position: fixed;
+    width: 100%;
+    background: var(--bg-dark);
+}
+
+.header-content {
+    padding-bottom: 9px;
+    margin: 0px 20px 0px 20px;
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+}
+
+.header-logo {
+    margin-top: 5px;
+}
+
+.header-logo h1{
+    font-weight: 300;
+    font-size: 22px;
+}
+
+.header-logo span {
+    font-weight: 50;
+    font-size: 15px;
+}
+
+.header-nav {
+    display: flex;
+    gap: 20px;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.download-content {
+    font-weight: 200;
+    font-size: 25px;
+}
+
+.story {
+    margin-top: 60px;
+}
+
+.story-content {
+    overflow-x: auto;
+    display: flex;
+    margin-left: 20px;
+    margin-top: 15px;
+    gap: 20px;
+}
+
+.story-content::-webkit-scrollbar {
+    display: none;
+}
+
+.my-story-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+}
+
+.story-content img {
+    width: 75px;
+    border-radius: 50%;
+}
+
+.content-header {
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.aftor {
+    margin-top: 15px;
+}
+
+.aftor-nemu {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.aftor-name {
+    font-size: 13px;
+    margin-left: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.aftor-header {
+    justify-content: space-between;
+    display: flex;
+}
+
+.aftor-content {
+    margin-left: 20px;
+    margin-right: 20px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.aftor-img {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.aftor-img  img {
+    width: 32px;
+}
+
+/*.content-video {
+    background: rgba(7, 112, 116, 0);
+}*/
+
+.content-video video {
+    width: 100%;
+}
+
+.content-footer-action {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content-footer-action-left {
+    margin-left: 20px;
+    gap: 20px;
+    display: flex;
+}
+
+.content-footer-action-left span {
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+}
+
+.content-footer-action-right {
+    margin-right: 10px;
+}
+
+.content-footer-text {
+    font-size: 13px;
+    margin-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+footer {
+    background: var(--bg-dark);
+    width: 100%;
+    height: 48px;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    bottom: 0px;
+    border-top: 1px solid #6b6b6b8f;
+}
+
+.footer-content {
+    margin-top: 10px;
+}
+
+.footer-content nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.profil img {
+    width: 25px;
+    border-radius: 50%;
+}
